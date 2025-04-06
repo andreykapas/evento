@@ -1,9 +1,16 @@
-const EventsPage = () => {
+export async function generateStaticParams() {
+  return [
+    { city: 'austin' },
+    { city: 'seattle' },
+  ]
+}
+
+const EventPage = ({ params }: { params: { city: string } }) => {
   return (
     <main>
-      EventsPage
+      Event page for city: {params.city}
     </main>
-  );
-};
+  )
+}
 
-export default EventsPage;
+export default EventPage

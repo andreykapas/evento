@@ -1,16 +1,16 @@
 export async function generateStaticParams() {
   return [
-    { city: 'austin' },
-    { city: 'seattle' },
+    { slug: 'evento-123' },
+    { slug: 'nextjs-conf' },
   ]
 }
 
-const EventPage = ({ params }: { params: { city: string } }) => {
+const EventDetailPage = ({ params }: { params: { slug: string } }) => {
   return (
     <main>
-      Event page for city: {params.city}
+      Event details for: {params.slug}
     </main>
-  );
-};
+  )
+}
 
-export default EventPage;
+export default EventDetailPage
